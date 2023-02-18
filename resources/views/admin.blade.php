@@ -13,7 +13,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#history" data-bs-toggle="tab">History</a>
                         </li>
-
                     </ul>
                    <div class="row my-2 mt-4 justify-content-center">
                     <div class="col-8">
