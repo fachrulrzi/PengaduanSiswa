@@ -69,7 +69,8 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">No</th>
-                                                <th scope="col">Nama</th>
+                                                <th scope="col">Nis</th>
+                                                <th scope="col">Kelas</th>
                                                 <th scope="col">Kategori</th>
                                                 <th scope="col">Lokasi</th>
                                                 <th scope="col">Keterangan</th>
@@ -81,7 +82,8 @@
                                             @foreach ($aspirasi as $as)
                                             <tr>
                                                 <th scope="row">{{ $as->id }}</th>
-                                                <td>{{ $as->input_aspirasi->penduduk->nama }}</td>
+                                                <td>{{ $as->input_aspirasi->siswa->nis }}</td>
+                                                <td>{{ $as->input_aspirasi->siswa->kelas }}</td>
                                                 <td>{{ $as->kategori->ket_kategori }}</td>
                                                 <td>{{ $as->input_aspirasi->lokasi }}</td>
                                                 <td>{{ $as->input_aspirasi->ket }}</td>
@@ -117,7 +119,7 @@
                                     @if ($aspirasi->count())
 
                                     @else
-                                    <p class="text-center fs-4 mt-5">Tidak ada Aspirasi Masyarakat. </p>
+                                    <p class="text-center fs-4 mt-5">Tidak ada Aspirasi Siswa. </p>
                                     @endif
                                    <div class="d-flex justify-content-end">
                                     {{ $aspirasi->links() }}
@@ -132,7 +134,8 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">No</th>
-                                                <th scope="col">Nama</th>
+                                                <th scope="col">Nis</th>
+                                                <th scope="col">Kelas</th>
                                                 <th scope="col">Kategori</th>
                                                 <th scope="col">Lokasi</th>
                                                 <th scope="col">Keterangan</th>
@@ -144,7 +147,8 @@
                                             @foreach ($selesai as $as)
                                             <tr>
                                                 <th scope="row">{{ $as->id }}</th>
-                                                <td>{{ $as->input_aspirasi->penduduk->nama }}</td>
+                                                <td>{{ $as->input_aspirasi->siswa->nis}}</td>
+                                                <td>{{ $as->input_aspirasi->siswa->kelas}}</td>
                                                 <td>{{ $as->kategori->ket_kategori }}</td>
                                                 <td>{{ $as->input_aspirasi->lokasi }}</td>
                                                 <td>{{ $as->input_aspirasi->ket }}</td>
@@ -160,7 +164,7 @@
                                     </table>
                                     @if ($selesai->count())
                                     @else
-                                    <p class="text-center fs-4 mt-5">Tidak ada Aspirasi Masyarakat. </p>
+                                    <p class="text-center fs-4 mt-5">Tidak ada Aspirasi Siswa. </p>
                                     @endif
                                     <div class="d-flex justify-content-end">
                                         {{ $selesai->links() }}

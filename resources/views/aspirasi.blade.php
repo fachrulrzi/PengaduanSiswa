@@ -12,9 +12,9 @@
               </div>
           
             @endif
-            @if (request('nik') != null)
+            @if (request('nis') != null)
             <div class="alert mt-3 alert-danger alert-dismissible fade show" role="alert">
-               <strong> NIK Anda Belum Terdaftar!! </strong><br>
+               <strong> nis Anda Belum Terdaftar!! </strong><br>
                <small>Silahkan Isi Datanya Kembali Dengan Benar</small>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
@@ -30,10 +30,10 @@
                                 value="{{ $no }}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-bold">Nomor Induk Kependudukan</label>
-                            <input type="number" name="nik" value="{{ old('nik') }}"
-                                class="form-control @error('nik') is-invalid @enderror">
-                            @error('nik')
+                            <label class="form-label fw-bold">Nomor Induk Siswa</label>
+                            <input type="number" name="nis" value="{{ old('nis') }}"
+                                class="form-control @error('nis') is-invalid @enderror">
+                            @error('nis')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -125,6 +125,14 @@
                             <div class="d-flex">
                                 <p class="fw-bold p-0 m-0 me-2">Nomor Pengaduan : </p>
                                 <p class="p-0 m-0">{{ $as->id }}</p>
+                            </div>
+                            <div class="d-flex">
+                                <p class="fw-bold p-0 m-0 me-2">NIS : </p>
+                                <p class="p-0 m-0">{{ $as->input_aspirasi->nis }}</p>
+                            </div>
+                            <div class="d-flex">
+                                <p class="fw-bold p-0 m-0 me-2">Kelas : </p>
+                                <p class="p-0 m-0">{{ $as->input_aspirasi->siswa->kelas }}</p>
                             </div>
                             <div class="d-flex">
                                 <p class="fw-bold p-0 m-0 me-2">Status : </p>

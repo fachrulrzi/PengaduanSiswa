@@ -13,8 +13,8 @@ class Input_aspirasi extends Model
     {
         return $this->belongsTo(Aspirasi::class, 'id_aspirasi');
     }
-    public function penduduk()
+    public function siswa()
     {
-        return $this->belongsTo(Penduduk::class, 'nik');
+        return $this->belongsTo(Siswa::class, 'nis', 'nis');
     }
 }

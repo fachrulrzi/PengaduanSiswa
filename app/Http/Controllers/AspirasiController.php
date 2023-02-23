@@ -6,6 +6,7 @@ use App\Models\Aspirasi;
 use App\Models\Input_aspirasi;
 use App\Models\Kategori;
 use App\Models\Penduduk;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class AspirasiController extends Controller
@@ -28,17 +29,17 @@ class AspirasiController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nik' => 'required',
+            'nis' => 'required',
             'lokasi' => 'required',
             'ket' => 'required'
         ]);
     
-        $data = Penduduk::all()->where('id',$request->nik)->count();
+        $data = Siswa::all()->where('nis',$request->nis)->count();
         if ($data > 0) {
        
             Input_aspirasi::create([
                 'id' => $request->id,
-                'nik' => $request->nik,
+                'nis' => $request->nis,
                 'lokasi' => $request->lokasi,
                 'kategori_id' => $request->kategori_id,
                 'ket' => $request->ket,
@@ -50,13 +51,13 @@ class AspirasiController extends Controller
             ]);
             return Redirect("/?id=$request->id");
             } else{
-                return Redirect("/?nik=$request->nik");
+                return Redirect("/?nis=$request->nis");
             }
         }
     public function feedback(Request $request)
     {
         Aspirasi::where('id_aspirasi',  $request->id_aspirasi)
         ->update(['feedback' => $request->feedback]);
-        return redirect('/aspirasi#aspirasi');
+        return redirect('/');
     }
 }

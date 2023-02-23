@@ -15,7 +15,7 @@ class CreateInputAspirasisTable extends Migration
     {
         Schema::create('input_aspirasis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('nik');
+            $table->foreignId('nis');
             $table->foreignId('kategori_id');
             $table->string('lokasi');
             $table->text('ket');
